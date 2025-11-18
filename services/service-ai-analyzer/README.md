@@ -37,7 +37,7 @@ AI is slow (I/O heavy).
 
 **Load Balancing:** We set `channel.basic_qos(prefetch_count=1)`. This ensures the worker never hoards messages. If we spin up 5 workers, the load balances perfectly based on inference speed.
 
-## 🔄 Logic Flow
+## Logic Flow
 
 1. **Consume:** Get a batch of CVs + Job Description from `QUEUE_AI_ANALYSIS`.
 
