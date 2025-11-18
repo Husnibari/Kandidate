@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+pika
+pydantic
+pydantic-settings
+pymongo
+motor
